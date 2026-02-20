@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  coupon-service:
+    build: .
+    image: coupon-service:latest
+    container_name: coupon-service
+    ports:
+      - "8080:8080"
+    environment:
+      - JAVA_OPTS=-Xms128m -Xmx256m
+    # H2 é in-memory, não requer volumes; console acessível em /h2-console
